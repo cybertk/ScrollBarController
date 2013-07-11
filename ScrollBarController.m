@@ -9,7 +9,6 @@
 #import "ScrollBarController.h"
 
 #import "UIView+AutoLayout.h"
-#import "ScrollBarRelationshipSegue.h"
 
 // In order to highlight the first title.
 const int kInvalidPage = -1;

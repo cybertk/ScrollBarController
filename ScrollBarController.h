@@ -17,9 +17,11 @@ IBOutlet UIScrollView *contentView_;
 // Default 20.
 @property(nonatomic) CGFloat titleFontSize;
 // Default gray
-@property(nonatomic, retain) UIColor *titleColor;
+@property(nonatomic, copy) UIColor *titleColor;
 // Default white
-@property(nonatomic, retain) UIColor *highlightedTitleColor;
+@property(nonatomic, copy) UIColor *highlightedTitleColor;
+// Default 0
+@property(nonatomic) CGFloat minTitleWidth;
 
 - (void)addContentItem:(UIViewController *)content
              withTitle:(NSString *)title;

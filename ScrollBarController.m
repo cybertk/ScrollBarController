@@ -49,6 +49,7 @@ const int kInvalidPage = -1;
 @synthesize titleColor;
 @synthesize highlightedTitleColor;
 @synthesize titleFontSize;
+@synthesize minTitleWidth;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -56,6 +57,7 @@ const int kInvalidPage = -1;
     self.titleFontSize = 20;
     self.titleColor = [UIColor lightGrayColor];
     self.highlightedTitleColor = [UIColor whiteColor];
+    self.minTitleWidth = 0;
 
     labels_ = [NSMutableArray new];
     items_ = [NSMutableArray new];
@@ -366,6 +368,10 @@ const int kInvalidPage = -1;
     // Leftmost.
     if (idx == 0) {
       [title centerInViewHorizontal:titleBar_];
+      [titleBar_ addVisualConstraints:
+                    [NSString stringWithFormat:@"[title(>=%f)]",
+                                               self.minTitleWidth]
+                             forViews:views];
       return;
     }
 

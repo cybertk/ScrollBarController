@@ -155,6 +155,7 @@ const int kInvalidPage = -1;
   [self addContentItem:content];
   [self addTitle:title];
   [self switchHighlightedTitleIfNeeded];
+  [self updateContentContstraints];
 }
 
 - (void)addContentItem:(UIViewController *)item
